@@ -11,8 +11,11 @@
     <div class="container">
         <br>
         <div class="row">
-            <div class="alert alert-warning " role="alert">
-                <strong>You there!</strong> you are here for a reason , login or piss off right now
+            <div id="warning-msg" class="alert alert-warning " role="alert">
+                <strong>You there!</strong> Message us or piss off right now
+            </div>
+            <div id="success-msg" class="alert alert-success collapse" role="alert">
+                <strong>Wow!</strong> thanks for your useless message :p
             </div>
         </div>
         <div class="row">
@@ -45,6 +48,8 @@
 <script>
 
     $('#myForm').on('submit', function(e) {
+        $('#warning-msg').hide();
+        $('#success-msg').show();
         e.preventDefault();
         console.log("yey i've been fired");
     });
