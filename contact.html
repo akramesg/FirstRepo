@@ -4,9 +4,10 @@
         <title>contact</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<form>
+<form id="myForm" action="#" method='post'>
     <div class="container">
         <br>
         <div class="row">
@@ -19,26 +20,34 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" required="required" >
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" name = "email" id="email" placeholder="Enter email">
+                    <input type="email" class="form-control" name = "email" id="email" placeholder="Enter email" required="required" >
                 </div>
             </div>
             <div class="col-sm-12">
                 <div class="form-group">
                     <label for="msg">Message:</label>
-                    <textarea class="form-control" rows="3" name="msg" id="msg" placeholder="Enter Message"></textarea>
+                    <textarea class="form-control" rows="3" name="msg" id="msg" placeholder="Enter Message" required="required" ></textarea>
                 </div>
             </div>
             <div class="col-sm-4 col-sm-offset-4">
-                <button type="button" class="btn btn-success btn-block">Submit</button>
+                <button class="btn btn-success btn-block">Submit</button>
             </div>
         </div>
     </div>
 </form>
+
+<script>
+    var myForm = $('#myForm');
+    console.log(myForm)
+    $('#myForm').on('submit', function() {
+        console.log("yey i've been fired");
+    });
+</script>
 </body>
 </html>
